@@ -71,7 +71,8 @@ h2 {
 .submit-btn,
 .location-btn {
   border: none;
-  font-size: 11px;
+  font-size: 14px;
+  line-height: 17px;
   border-radius: 10px;
   height: 31px;
 }
@@ -127,8 +128,8 @@ h2 {
   border: none;
   max-height: 31px;
   border-radius: 10px;
-  font-size: 11px;
-  line-height: 13px;
+  font-size: 14px;
+  line-height: 17px;
   margin: 0;
   align-content: center;
   justify-content: space-between;
@@ -137,7 +138,7 @@ h2 {
 }
 
 .btn-farenhait {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   width: 31px;
   height: 31px;
