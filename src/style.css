@@ -1,0 +1,188 @@
+/* Containers style */
+body {
+  background: url(media/landscape.svg) no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Lato", sans-serif;
+  color: black;
+}
+
+.app-content {
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  max-width: 360px;
+  display: block;
+  margin: 20px auto;
+  padding: 0;
+}
+
+/* Frosted glass effect */
+.app {
+  width: 360px;
+  border-radius: 10px;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+}
+
+.app:before {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+/* Text style */
+h1 {
+  font-size: 36px;
+  line-height: 43px;
+  text-align: center;
+  font-weight: 400;
+  padding-top: 20px;
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.main-temp {
+  font-size: 96px;
+  line-height: 115px;
+  font-weight: 300;
+  padding: 20px 20px;
+}
+
+.forecast {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 38px;
+}
+
+/* Search form styling */
+.form-control,
+.submit-btn,
+.location-btn {
+  border: none;
+  font-size: 11px;
+  border-radius: 10px;
+  height: 31px;
+}
+
+.form-group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.form-control {
+  width: 65%;
+  margin: 0 5px 0 0;
+}
+
+.submit-btn {
+  width: 35%;
+  margin: 0 5px 0 0;
+  background: #545398;
+}
+
+.location-btn {
+  width: 10%;
+  background: #8686b4;
+}
+
+.fa-map-marker-alt {
+  color: #fff;
+}
+
+/* Current temp text positioning */
+.temp {
+  padding: 0;
+  text-align: right;
+}
+
+.degree {
+  padding: 0;
+  text-align: left;
+}
+
+.max-min {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 300;
+  padding: 0;
+  text-align: center;
+}
+
+/* Navbar styling */
+.navbar {
+  background: #fff;
+  border: none;
+  max-height: 31px;
+  border-radius: 10px;
+  font-size: 11px;
+  line-height: 13px;
+  margin: 0;
+  align-content: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-farenhait {
+  font-size: 11px;
+  font-weight: 700;
+  width: 31px;
+  height: 31px;
+  position: relative;
+  left: 1px;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  background: #8686b4;
+}
+
+.lable {
+  font-weight: 400;
+  padding: 10px 0 10px 10px;
+}
+
+.value {
+  font-weight: 300;
+  padding: 10px 0 10px 10px;
+}
+
+/* Forecast styling */
+.icon {
+  text-align: center;
+}
+
+.day {
+  text-align: left;
+}
+
+.max-min-temp {
+  text-align: right;
+}
+
+/* Footer styling */
+.footer {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 300;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.footer a {
+  color: #a3dabb;
+  font-weight: 400;
+  text-decoration: none;
+}
