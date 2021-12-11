@@ -1,6 +1,64 @@
 let apiKey = "055ee8048e7236318bbd1ee44ad667e0";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Barcelona&appid=${apiKey}&units=metric`;
 
+function formatTime(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
+function formatDate(timestamp) {
+  function getOrdinal(timestamp) {
+    let date = new Date(timestamp);
+    let dayDate = date.getDate();
+    if (dayDate === 1) {
+      return "st";
+    } else if (dayDate === 2 || dayDate === 22) {
+      return "nd";
+    } else if (dayDate === 3) {
+      return "rd";
+    } else {
+      return "th";
+    }
+  }
+  let date = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[date.getMonth()];
+  let dayDate = date.getDate();
+  let ordinal = getOrdinal();
+  return `${day}, ${month} ${dayDate}${ordinal}`;
+}
+
 // Replace temperatures, city, desciption and navbar
 function displayTemperature(response) {
   console.log(response.data);
@@ -18,6 +76,47 @@ function displayTemperature(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   let windSpeedElement = document.querySelector("#wind-speed");
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
+  // Change time according to location
+  let timeElement = document.querySelector("#time");
+  let timestamp = response.data.dt;
+  let timezone = response.data.timezone;
+  timeElement.innerHTML = formatTime((timestamp + (timezone - 3600)) * 1000);
+  // Change date
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDate((timestamp + (timezone - 3600)) * 1000);
 }
+
+//let currentDate = new Date();
+//function changeDate() {
+//  let date = document.querySelector("#date");
+//  let days = [
+//    "Sunday",
+//    "Monday",
+//    "Tuesday",
+//    "Wednesday",
+//    "Thursday",
+//    "Friday",
+//    "Saturday",
+//  ];
+//  let day = days[currentDate.getDay()];
+//  let months = [
+//    "January",
+//    "February",
+//    "March",
+//    "April",
+//    "May",
+//    "June",
+//    "July",
+//    "August",
+//    "September",
+//    "October",
+//    "November",
+//    "December",
+//  ];
+//  let month = months[currentDate.getMonth()];
+//  let dayDate = currentDate.getDate();
+//  let ordinal = getOrdinal();
+//  date.innerHTML = `${day}, ${month} ${dayDate}${ordinal}`;
+//}
 
 axios.get(apiUrl).then(displayTemperature);
