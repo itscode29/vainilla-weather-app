@@ -86,37 +86,4 @@ function displayTemperature(response) {
   dateElement.innerHTML = formatDate((timestamp + (timezone - 3600)) * 1000);
 }
 
-//let currentDate = new Date();
-//function changeDate() {
-//  let date = document.querySelector("#date");
-//  let days = [
-//    "Sunday",
-//    "Monday",
-//    "Tuesday",
-//    "Wednesday",
-//    "Thursday",
-//    "Friday",
-//    "Saturday",
-//  ];
-//  let day = days[currentDate.getDay()];
-//  let months = [
-//    "January",
-//    "February",
-//    "March",
-//    "April",
-//    "May",
-//    "June",
-//    "July",
-//    "August",
-//    "September",
-//    "October",
-//    "November",
-//    "December",
-//  ];
-//  let month = months[currentDate.getMonth()];
-//  let dayDate = currentDate.getDate();
-//  let ordinal = getOrdinal();
-//  date.innerHTML = `${day}, ${month} ${dayDate}${ordinal}`;
-//}
-
 axios.get(apiUrl).then(displayTemperature);
