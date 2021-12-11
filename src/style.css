@@ -89,14 +89,28 @@ h2 {
 }
 
 .submit-btn {
+  color: #fff;
   width: 35%;
   margin: 0 5px 0 0;
   background: #545398;
+  transition: 150ms ease-in-out;
+}
+
+.submit-btn:hover {
+  color: #fff;
+  background: #3d2f75;
 }
 
 .location-btn {
   width: 10%;
   background: #8686b4;
+  color: #fff;
+  transition: 150ms ease-in-out;
+}
+
+.location-btn:hover {
+  color: #fff;
+  background: #6868a1;
 }
 
 .fa-map-marker-alt {
@@ -148,6 +162,13 @@ h2 {
   border: none;
   border-radius: 10px;
   background: #8686b4;
+  color: #fff;
+  transition: 150ms ease-in-out;
+}
+
+.btn-farenhait:hover {
+  color: #fff;
+  background: #6868a1;
 }
 
 .lable {
