@@ -51,13 +51,22 @@ h2 {
   line-height: 22px;
   text-align: center;
   font-weight: 300;
+  margin-bottom: 0;
 }
 
 .main-temp {
   font-size: 96px;
   line-height: 115px;
   font-weight: 300;
-  padding: 20px 20px;
+  padding: 10px 0 5px 0;
+}
+
+.description {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .forecast {
