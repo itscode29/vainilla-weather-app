@@ -28,12 +28,13 @@
     <div class="container">
       <div class="app">
         <div class="app-content">
-          <form>
+          <form id="search-engine">
             <div class="form-group">
               <input
-                type="text"
+                type="search"
                 class="d-inline form-control"
                 placeholder="Enter a city"
+                id="city-input"
               />
               <button type="submit" class="btn submit-btn">Submit</button>
               <button class="btn location-btn">
@@ -46,7 +47,7 @@
           <h2 id="time"></h2>
           <div class="row main-temp">
             <div class="col-8 temp" id="temperature"></div>
-            <div class="col-4 degree">º</div>
+            <div class="col-4 degree" id="degree">º</div>
           </div>
           <div class="max-min">
             <span id="current-min-temp"></span> |

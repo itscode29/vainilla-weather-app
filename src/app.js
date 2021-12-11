@@ -1,6 +1,3 @@
-let apiKey = "055ee8048e7236318bbd1ee44ad667e0";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Barcelona&appid=${apiKey}&units=metric`;
-
 function formatTime(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -59,11 +56,20 @@ function formatDate(timestamp) {
   return `${day}, ${month} ${dayDate}${ordinal}`;
 }
 
-// Replace temperatures, city, desciption and navbar
+// Replace data
 function displayTemperature(response) {
-  console.log(response.data);
   let temperatureElment = document.querySelector("#temperature");
-  temperatureElment.innerHTML = Math.round(response.data.main.temp);
+  let temperature = Math.round(response.data.main.temp);
+  let degreeElement = document.querySelector("#degree");
+  temperatureElment.innerHTML = temperature;
+  // Center temperatures below 10
+  if (temperature < 10) {
+    temperatureElment.classList.remove("col-8");
+    temperatureElment.classList.add("col-7");
+    degreeElement.classList.remove("col-4");
+    degreeElement.classList.add("col-5");
+  }
+  //
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
   let minElement = document.querySelector("#current-min-temp");
@@ -86,4 +92,19 @@ function displayTemperature(response) {
   dateElement.innerHTML = formatDate((timestamp + (timezone - 3600)) * 1000);
 }
 
-axios.get(apiUrl).then(displayTemperature);
+function showWeather(city) {
+  let apiKey = "055ee8048e7236318bbd1ee44ad667e0";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function searchCity(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  showWeather(cityInputElement.value);
+}
+
+showWeather("Barcelona");
+
+let searchEngine = document.querySelector("#search-engine");
+searchEngine.addEventListener("submit", searchCity);
