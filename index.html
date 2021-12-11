@@ -41,15 +41,18 @@
               </button>
             </div>
           </form>
-          <h1 id="city">Barcelona</h1>
+          <h1 id="city"></h1>
           <h2 id="date">Friday, December 10th</h2>
           <h2 id="time">15:50</h2>
           <div class="row main-temp">
-            <div class="col-8 temp" id="temperature">16</div>
+            <div class="col-8 temp" id="temperature"></div>
             <div class="col-4 degree">º</div>
           </div>
-          <div class="max-min">13 | 18</div>
-          <div class="description" id="desription">Clouds</div>
+          <div class="max-min">
+            <span id="current-min-temp"></span> |
+            <span id="current-max-temp"></span>
+          </div>
+          <div class="description" id="description">Clouds</div>
           <nav class="navbar">
             <span class="navbar-text lable">Humidity</span>
             <span class="navbar-text value">
@@ -66,8 +69,8 @@
               <div class="col-3 icon"><i class="fas fa-cloud-sun"></i></div>
               <div class="col-4 day">Saturday</div>
               <div class="col-5 max-min-temp">
-                <span class="min" id="current-min-temp">13</span> |
-                <span class="max" id="current-max-temp">18</span>
+                <span class="min">13</span> |
+                <span class="max">18</span>
               </div>
             </div>
             <div class="row">
