@@ -166,7 +166,8 @@ h2 {
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.btn-farenheit {
+.btn-farenheit,
+.btn-celsius {
   font-size: 14px;
   font-weight: 700;
   width: 31px;
@@ -181,7 +182,8 @@ h2 {
   transition: 150ms ease-in-out;
 }
 
-.btn-farenheit:hover {
+.btn-farenheit:hover,
+.btn-celsius:hover {
   color: #fff;
   background: #6868a1;
 }
