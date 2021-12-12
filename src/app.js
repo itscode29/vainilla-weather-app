@@ -97,18 +97,21 @@ function displayTemperature(response) {
   dateElement.innerHTML = formatDate((timestamp + (timezone - 3600)) * 1000);
 }
 
+// API Request
 function showWeather(city) {
   let apiKey = "055ee8048e7236318bbd1ee44ad667e0";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
+// Search engine
 function searchCity(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   showWeather(cityInputElement.value);
 }
 
+// Unit change button
 function changeUnits() {
   debugger;
   let mainTempElement = document.querySelector("#temperature");
@@ -139,11 +142,13 @@ function changeUnits() {
   }
 }
 
+// Global variables
 let celsiusTemperature = null;
 let celsiusMinTemp = null;
 let celsiusMaxTemp = null;
 let metricWindSpeed = null;
 
+// Button event listeners
 let farenheitButton = document.querySelector("#btn-farenheit");
 farenheitButton.addEventListener("click", changeUnits);
 
