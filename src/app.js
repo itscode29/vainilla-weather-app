@@ -63,11 +63,16 @@ function displayTemperature(response) {
   let degreeElement = document.querySelector("#degree");
   temperatureElment.innerHTML = temperature;
   // Center temperatures below 10
-  if (temperature < 10) {
+  if (temperature < 10 && temperature > -10) {
     temperatureElment.classList.remove("col-8");
     temperatureElment.classList.add("col-7");
     degreeElement.classList.remove("col-4");
     degreeElement.classList.add("col-5");
+  } else {
+    temperatureElment.classList.remove("col-7");
+    temperatureElment.classList.add("col-8");
+    degreeElement.classList.remove("col-5");
+    degreeElement.classList.add("col-4");
   }
   //
   let cityElement = document.querySelector("#city");
