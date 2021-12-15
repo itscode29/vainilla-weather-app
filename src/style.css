@@ -1,9 +1,97 @@
 /* Containers style */
 body {
-  background: url(media/landscape.svg) no-repeat center center fixed;
-  background-size: cover;
   font-family: "Lato", sans-serif;
   color: black;
+}
+
+body.day-clear {
+  background: url(media/day-clear.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.dawn-clear {
+  background: url(media/dawn-clear.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.dusk-clear {
+  background: url(media/dusk-clear.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.night-clear {
+  background: url(media/night-clear.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.dawn-fog {
+  background: url(media/dawn-fog.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.day-fog {
+  background: url(media/day-fog.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.dusk-fog {
+  background: url(media/dusk-fog.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.night-fog {
+  background: url(media/night-fog.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.day-thunderstorm {
+  background: url(media/day-thunderstorm.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.night-thunderstorn {
+  background: url(media/night-thunderstorm.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.day-rain {
+  background: url(media/day-rain.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.night-rain {
+  background: url(media/night-rain.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.day-drizzle {
+  background: url(media/day-drizzle.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.night-drizzle {
+  background: url(media/night-drizzle.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.day-snow {
+  background: url(media/day-snow.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.night-snow {
+  background: url(media/night-snow.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.day-clouds {
+  background: url(media/day-clouds.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.night-clouds {
+  background: url(media/night-clouds.svg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 .app-content {
@@ -105,25 +193,25 @@ h2 {
   color: #fff;
   width: 35%;
   margin: 0 5px 0 0;
-  background: #545398;
+  background: #395479;
   transition: 150ms ease-in-out;
 }
 
 .submit-btn:hover {
   color: #fff;
-  background: #3d2f75;
+  background: #263f66;
 }
 
 .location-btn {
   width: 10%;
-  background: #8686b4;
+  background: #779fbb;
   color: #fff;
   transition: 150ms ease-in-out;
 }
 
 .location-btn:hover {
   color: #fff;
-  background: #6868a1;
+  background: #587a9a;
 }
 
 .fa-map-marker-alt {
@@ -177,7 +265,7 @@ h2 {
   padding: 0;
   border: none;
   border-radius: 10px;
-  background: #8686b4;
+  background: #779fbb;
   color: #fff;
   transition: 150ms ease-in-out;
 }
@@ -185,7 +273,7 @@ h2 {
 .btn-farenheit:hover,
 .btn-celsius:hover {
   color: #fff;
-  background: #6868a1;
+  background: #587a9a;
 }
 
 .lable {
