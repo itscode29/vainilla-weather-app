@@ -58,6 +58,7 @@ function formatDate(timestamp) {
 
 // Replace data
 function displayTemperature(response) {
+  console.log(response.data);
   let temperatureElment = document.querySelector("#temperature");
   celsiusTemperature = response.data.main.temp;
   celsiusMinTemp = response.data.main.temp_min;
@@ -95,6 +96,104 @@ function displayTemperature(response) {
   // Change date
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate((timestamp + (timezone - 3600)) * 1000);
+  // Change background
+  let weather = response.data.weather[0].main;
+  let backgroundElement = document.querySelector("#background");
+  if (weather === "Clouds") {
+    backgroundElement.classList.remove(
+      "day-clear",
+      "day-fog",
+      "day-thunderstorm",
+      "day-rain",
+      "day-drizzle",
+      "day-snow",
+      "day-clouds"
+    );
+    backgroundElement.classList.add("day-clouds");
+  }
+  if (weather === "Clear") {
+    backgroundElement.classList.remove(
+      "day-clear",
+      "day-fog",
+      "day-thunderstorm",
+      "day-rain",
+      "day-drizzle",
+      "day-snow",
+      "day-clouds"
+    );
+    backgroundElement.classList.add("day-clear");
+  }
+  if (weather === "Thunderstorm") {
+    backgroundElement.classList.remove(
+      "day-clear",
+      "day-fog",
+      "day-thunderstorm",
+      "day-rain",
+      "day-drizzle",
+      "day-snow",
+      "day-clouds"
+    );
+    backgroundElement.classList.add("day-thunderstorm");
+  }
+  if (weather === "Drizzle") {
+    backgroundElement.classList.remove(
+      "day-clear",
+      "day-fog",
+      "day-thunderstorm",
+      "day-rain",
+      "day-drizzle",
+      "day-snow",
+      "day-clouds"
+    );
+    backgroundElement.classList.add("day-drizzle");
+  }
+  if (weather === "Rain") {
+    backgroundElement.classList.remove(
+      "day-clear",
+      "day-fog",
+      "day-thunderstorm",
+      "day-rain",
+      "day-drizzle",
+      "day-snow",
+      "day-clouds"
+    );
+    backgroundElement.classList.add("day-rain");
+  }
+  if (weather === "Snow") {
+    backgroundElement.classList.remove(
+      "day-clear",
+      "day-fog",
+      "day-thunderstorm",
+      "day-rain",
+      "day-drizzle",
+      "day-snow",
+      "day-clouds"
+    );
+    backgroundElement.classList.add("day-snow");
+  }
+  if (
+    weather === "Fog" ||
+    weather === "Smoke" ||
+    weather === "Mist" ||
+    weather === "Smoke" ||
+    weather === "Haze" ||
+    weather === "Dust" ||
+    weather === "Sand" ||
+    weather === "Ash" ||
+    weather === "Squall" ||
+    weather === "Tornado"
+  ) {
+    backgroundElement.classList.remove(
+      "day-clear",
+      "day-fog",
+      "day-thunderstorm",
+      "day-rain",
+      "day-drizzle",
+      "day-snow",
+      "day-clouds"
+    );
+    backgroundElement.classList.add("day-fog");
+  }
 }
 
 // API Request
