@@ -56,9 +56,10 @@ function formatDate(timestamp) {
   return `${day}, ${month} ${dayDate}${ordinal}`;
 }
 
+function getVariables() {}
+
 // Replace data
 function displayTemperature(response) {
-  console.log(response.data);
   let temperatureElment = document.querySelector("#temperature");
   celsiusTemperature = response.data.main.temp;
   celsiusMinTemp = response.data.main.temp_min;
@@ -212,7 +213,6 @@ function searchCity(event) {
 
 // Unit change button
 function changeUnits() {
-  debugger;
   let mainTempElement = document.querySelector("#temperature");
   let minTempElement = document.querySelector("#current-min-temp");
   let maxTempElement = document.querySelector("#current-max-temp");
@@ -241,6 +241,40 @@ function changeUnits() {
   }
 }
 
+// Show current location data
+function searchCurrentLocation(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = "055ee8048e7236318bbd1ee44ad667e0";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function getCurrentLocation() {
+  navigator.geolocation.getCurrentPosition(searchCurrentLocation);
+}
+
+// Display forecast
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Monday", "Tuesday", "Wendesday", "Thursday", "Friday"];
+  let forecastHTML = "";
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="row">
+          <div class="col-3 icon">
+            <i class="fas fa-cloud-sun"></i>
+          </div>
+          <div class="col-4 day">${day}</div>
+          <div class="col-5 max-min-temp">
+            <span class="min">13</span> | <span class="max">18</span>
+          </div>
+        </div>`;
+  });
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // Global variables
 let celsiusTemperature = null;
 let celsiusMinTemp = null;
@@ -254,4 +288,8 @@ farenheitButton.addEventListener("click", changeUnits);
 let searchEngine = document.querySelector("#search-engine");
 searchEngine.addEventListener("submit", searchCity);
 
+let currentCityButton = document.querySelector("#current-location");
+currentCityButton.addEventListener("click", getCurrentLocation);
+
 showWeather("Barcelona");
+displayForecast();

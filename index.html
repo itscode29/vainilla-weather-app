@@ -37,7 +37,7 @@
                 id="city-input"
               />
               <button type="submit" class="btn submit-btn">Submit</button>
-              <button class="btn location-btn">
+              <button class="btn location-btn" id="current-location">
                 <i class="fas fa-map-marker-alt"></i>
               </button>
             </div>
@@ -66,44 +66,7 @@
             </span>
             <button class="btn btn-farenheit" id="btn-farenheit">ºF</button>
           </nav>
-          <div class="forecast">
-            <div class="row">
-              <div class="col-3 icon"><i class="fas fa-cloud-sun"></i></div>
-              <div class="col-4 day">Saturday</div>
-              <div class="col-5 max-min-temp">
-                <span class="min">13</span> |
-                <span class="max">18</span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-3 icon"><i class="fas fa-cloud-sun"></i></div>
-              <div class="col-4 day">Sunday</div>
-              <div class="col-5 max-min-temp">
-                <span class="min">13</span> | <span class="max">18</span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-3 icon"><i class="fas fa-cloud-sun"></i></div>
-              <div class="col-4 day">Monday</div>
-              <div class="col-5 max-min-temp">
-                <span class="min">13</span> | <span class="max">18</span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-3 icon"><i class="fas fa-cloud-sun"></i></div>
-              <div class="col-4 day">Tuesday</div>
-              <div class="col-5 max-min-temp">
-                <span class="min">13</span> | <span class="max">18</span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-3 icon"><i class="fas fa-cloud-sun"></i></div>
-              <div class="col-4 day">Wednesday</div>
-              <div class="col-5 max-min-temp">
-                <span class="min">13</span> | <span class="max">18</span>
-              </div>
-            </div>
-          </div>
+          <div class="forecast" id="forecast"></div>
         </div>
       </div>
       <p class="footer">

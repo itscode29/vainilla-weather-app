@@ -4,6 +4,20 @@ body {
   color: black;
 }
 
+.app-content {
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  max-width: 360px;
+  display: block;
+  margin: 20px auto;
+  padding: 0;
+}
+
+/* Backgrounds */
 body.day-clear {
   background: url(media/day-clear.svg) no-repeat center center fixed;
   background-size: cover;
@@ -92,19 +106,6 @@ body.day-clouds {
 body.night-clouds {
   background: url(media/night-clouds.svg) no-repeat center center fixed;
   background-size: cover;
-}
-
-.app-content {
-  padding: 20px;
-  position: relative;
-  z-index: 2;
-}
-
-.container {
-  max-width: 360px;
-  display: block;
-  margin: 20px auto;
-  padding: 0;
 }
 
 /* Frosted glass effect */
@@ -309,7 +310,7 @@ h2 {
 }
 
 .footer a {
-  color: #a3dabb;
+  color: #9dc7ff;
   font-weight: 400;
   text-decoration: none;
 }
