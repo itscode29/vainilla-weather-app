@@ -10,80 +10,25 @@ function centerTemperatures(temperature) {
   }
 }
 
-function changeBackground(weather) {
-  let backgroundElement = document.querySelector("#background");
-  if (weather === "Clouds") {
-    backgroundElement.classList.remove(
-      "day-clear",
-      "day-fog",
-      "day-thunderstorm",
-      "day-rain",
-      "day-drizzle",
-      "day-snow",
-      "day-clouds"
-    );
-    backgroundElement.classList.add("day-clouds");
+function removeClasses(element) {
+  element.classList.remove(
+    "day-clear",
+    "day-fog",
+    "day-thunderstorm",
+    "day-rain",
+    "day-drizzle",
+    "day-snow",
+    "day-clouds"
+  );
+}
+
+function isDay() {
+  if (sunrise < timestamp && sunset > timestamp) {
+    return true;
   }
-  if (weather === "Clear") {
-    backgroundElement.classList.remove(
-      "day-clear",
-      "day-fog",
-      "day-thunderstorm",
-      "day-rain",
-      "day-drizzle",
-      "day-snow",
-      "day-clouds"
-    );
-    backgroundElement.classList.add("day-clear");
-  }
-  if (weather === "Thunderstorm") {
-    backgroundElement.classList.remove(
-      "day-clear",
-      "day-fog",
-      "day-thunderstorm",
-      "day-rain",
-      "day-drizzle",
-      "day-snow",
-      "day-clouds"
-    );
-    backgroundElement.classList.add("day-thunderstorm");
-  }
-  if (weather === "Drizzle") {
-    backgroundElement.classList.remove(
-      "day-clear",
-      "day-fog",
-      "day-thunderstorm",
-      "day-rain",
-      "day-drizzle",
-      "day-snow",
-      "day-clouds"
-    );
-    backgroundElement.classList.add("day-drizzle");
-  }
-  if (weather === "Rain") {
-    backgroundElement.classList.remove(
-      "day-clear",
-      "day-fog",
-      "day-thunderstorm",
-      "day-rain",
-      "day-drizzle",
-      "day-snow",
-      "day-clouds"
-    );
-    backgroundElement.classList.add("day-rain");
-  }
-  if (weather === "Snow") {
-    backgroundElement.classList.remove(
-      "day-clear",
-      "day-fog",
-      "day-thunderstorm",
-      "day-rain",
-      "day-drizzle",
-      "day-snow",
-      "day-clouds"
-    );
-    backgroundElement.classList.add("day-snow");
-  }
+}
+
+function isFog(weather) {
   if (
     weather === "Fog" ||
     weather === "Smoke" ||
@@ -96,20 +41,71 @@ function changeBackground(weather) {
     weather === "Squall" ||
     weather === "Tornado"
   ) {
-    backgroundElement.classList.remove(
-      "day-clear",
-      "day-fog",
-      "day-thunderstorm",
-      "day-rain",
-      "day-drizzle",
-      "day-snow",
-      "day-clouds"
-    );
-    backgroundElement.classList.add("day-fog");
+    return true;
   }
 }
 
-function formatTime(timestamp) {
+function changeBackground(weather) {
+  let backgroundElement = document.querySelector("#background");
+  if (weather === "Clouds" && isDay()) {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("day-clouds");
+  }
+  if (weather === "Clouds") {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("night-clouds");
+  }
+  if (weather === "Clear" && isDay()) {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("day-clear");
+  }
+  if (weather === "Clear") {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("night-clear");
+  }
+  if (weather === "Thunderstorm" && isDay()) {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("day-thunderstorm");
+  }
+  if (weather === "Thunderstorm") {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("night-thunderstorm");
+  }
+  if (weather === "Drizzle" && isDay()) {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("day-drizzle");
+  }
+  if (weather === "Drizzle") {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("night-drizzle");
+  }
+  if (weather === "Rain" && isDay()) {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("day-rain");
+  }
+  if (weather === "Rain") {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("night-rain");
+  }
+  if (weather === "Snow" && isDay()) {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("day-snow");
+  }
+  if (weather === "Snow") {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("night-snow");
+  }
+  if (isFog(weather) && isDay()) {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("day-fog");
+  }
+  if (isFog(weather)) {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("night-fog");
+  }
+}
+
+function formatTime() {
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
@@ -122,7 +118,7 @@ function formatTime(timestamp) {
   return `${hours}:${minutes}`;
 }
 
-function getOrdinal(timestamp) {
+function getOrdinal() {
   let date = new Date(timestamp);
   let dayDate = date.getDate();
   if (dayDate === 1) {
@@ -136,7 +132,7 @@ function getOrdinal(timestamp) {
   }
 }
 
-function formatDate(timestamp) {
+function formatDate() {
   let date = new Date(timestamp);
   let days = [
     "Sunday",
@@ -168,14 +164,14 @@ function formatDate(timestamp) {
   return `${day}, ${month} ${dayDate}${ordinal}`;
 }
 
-function changeTimeDate(timestamp, timezone) {
+function changeTimeDate() {
   let timeElement = document.querySelector("#time");
   timeElement.innerHTML = formatTime((timestamp + (timezone - 3600)) * 1000);
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate((timestamp + (timezone - 3600)) * 1000);
 }
 
-function formatDayForecast(timestamp, timezone) {
+function formatDayForecast() {
   let date = new Date((timestamp + (timezone - 3600)) * 1000);
   let day = date.getDay();
   let days = [
@@ -228,6 +224,7 @@ function getForecastData(coordinates) {
 
 // Replace data
 function displayTemperature(response) {
+  console.log(response.data);
   celsiusTemperature = response.data.main.temp;
   celsiusMinTemp = response.data.main.temp_min;
   celsiusMaxTemp = response.data.main.temp_max;
@@ -247,8 +244,12 @@ function displayTemperature(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   let windSpeedElement = document.querySelector("#wind-speed");
   windSpeedElement.innerHTML = Math.round(metricWindSpeed);
+  timestamp = response.data.dt;
+  timezone = response.data.timezone;
+  sunset = response.data.sys.sunset;
+  sunrise = response.data.sys.sunrise;
   centerTemperatures(temperature);
-  changeTimeDate(response.data.dt, response.data.timezone);
+  changeTimeDate();
   changeBackground(response.data.weather[0].main);
   getForecastData(response.data.coord);
 }
@@ -319,6 +320,10 @@ let celsiusMaxTemp = null;
 let metricWindSpeed = null;
 let units = "metric";
 let coords = null;
+let timestamp = null;
+let timezone = null;
+let sunrise = null;
+let sunset = null;
 let apiKey = "055ee8048e7236318bbd1ee44ad667e0";
 
 // Button event listeners
