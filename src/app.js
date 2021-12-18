@@ -193,7 +193,6 @@ function formatDayForecast(timestamp, timezone) {
 // Display forecast
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
   forecast.forEach(function (object, index) {
@@ -202,9 +201,9 @@ function displayForecast(response) {
         forecastHTML +
         `<div class="row">
     <div class="col-3 icon">
-    <img src="http://openweathermap.org/img/wn/${
+    <img src=src/media/${
       object.weather[0].icon
-    }@2x.png" alt="weather icon" width="35"/>
+    }.png alt="weather icon" width="24"/>
     </div>
     <div class="col-4 day">${formatDayForecast(
       object.dt,
@@ -222,8 +221,8 @@ function displayForecast(response) {
 }
 
 function getForecastData(coordinates) {
-  console.log(coordinates);
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  coords = coordinates;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -286,6 +285,8 @@ function changeUnits() {
     windUnitsElement.innerHTML = "mph";
     farenheitButton.classList.replace("btn-farenheit", "btn-celsius");
     farenheitButton.innerHTML = "ºC";
+    units = "imperial";
+    getForecastData(coords);
   } else {
     mainTempElement.innerHTML = Math.round(celsiusTemperature);
     minTempElement.innerHTML = Math.round(celsiusMinTemp);
@@ -294,6 +295,8 @@ function changeUnits() {
     windUnitsElement.innerHTML = "m/s";
     farenheitButton.classList.replace("btn-celsius", "btn-farenheit");
     farenheitButton.innerHTML = "ºF";
+    units = "metric";
+    getForecastData(coords);
   }
 }
 
@@ -314,6 +317,8 @@ let celsiusTemperature = null;
 let celsiusMinTemp = null;
 let celsiusMaxTemp = null;
 let metricWindSpeed = null;
+let units = "metric";
+let coords = null;
 let apiKey = "055ee8048e7236318bbd1ee44ad667e0";
 
 // Button event listeners
