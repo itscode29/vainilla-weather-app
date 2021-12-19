@@ -25,7 +25,9 @@ function removeClasses(element) {
     "day-snow",
     "night-snow",
     "day-clouds",
-    "night-clouds"
+    "night-clouds",
+    "day-few-clouds",
+    "night-few-clouds"
   );
 }
 
@@ -63,59 +65,79 @@ function isFog(weather) {
 function changeBackground(weather) {
   debugger;
   let backgroundElement = document.querySelector("#background");
-  if (weather === "Clouds" && isDay()) {
+  if (
+    (weather.description === "broken clouds" && isDay()) ||
+    (weather.description === "overcast clouds" && isDay())
+  ) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("day-clouds");
   }
-  if (weather === "Clouds" && isNight()) {
+  if (
+    (weather.description === "broken clouds" && isNight()) ||
+    (weather.description === "overcast clouds" && isNight())
+  ) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("night-clouds");
   }
-  if (weather === "Clear" && isDay()) {
+  if (
+    (weather.description === "few clouds" && isDay()) ||
+    (weather.description === "scattered clouds" && isDay())
+  ) {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("day-few-clouds");
+  }
+  if (
+    (weather.description === "few clouds" && isNight()) ||
+    (weather.description === "scattered clouds" && isNight())
+  ) {
+    removeClasses(backgroundElement);
+    backgroundElement.classList.add("night-few-clouds");
+  }
+  if (weather.main === "Clear" && isDay()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("day-clear");
   }
-  if (weather === "Clear" && isNight()) {
+  if (weather.main === "Clear" && isNight()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("night-clear");
   }
-  if (weather === "Thunderstorm" && isDay()) {
+  if (weather.main === "Thunderstorm" && isDay()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("day-thunderstorm");
   }
-  if (weather === "Thunderstorm" && isNight()) {
+  if (weather.main === "Thunderstorm" && isNight()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("night-thunderstorm");
   }
-  if (weather === "Drizzle" && isDay()) {
+  if (weather.main === "Drizzle" && isDay()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("day-drizzle");
   }
-  if (weather === "Drizzle" && isNight()) {
+  if (weather.main === "Drizzle" && isNight()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("night-drizzle");
   }
-  if (weather === "Rain" && isDay()) {
+  if (weather.main === "Rain" && isDay()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("day-rain");
   }
-  if (weather === "Rain" && isNight()) {
+  if (weather.main === "Rain" && isNight()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("night-rain");
   }
-  if (weather === "Snow" && isDay()) {
+  if (weather.main === "Snow" && isDay()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("day-snow");
   }
-  if (weather === "Snow" && isNight()) {
+  if (weather.main === "Snow" && isNight()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("night-snow");
   }
-  if (isFog(weather) && isDay()) {
+  if (isFog(weather.main) && isDay()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("day-fog");
   }
-  if (isFog(weather) && isNight()) {
+  if (isFog(weather.main) && isNight()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("night-fog");
   }
@@ -187,7 +209,7 @@ function changeTimeDate() {
   dateElement.innerHTML = formatDate((timestamp + (timezone - 3600)) * 1000);
 }
 
-function formatDayForecast() {
+function formatDayForecast(timestamp, timezone) {
   let date = new Date((timestamp + (timezone - 3600)) * 1000);
   let day = date.getDay();
   let days = [
@@ -268,7 +290,7 @@ function displayTemperature(response) {
   sunrise = response.data.sys.sunrise;
   centerTemperatures(temperature);
   changeTimeDate();
-  changeBackground(response.data.weather[0].main);
+  changeBackground(response.data.weather[0]);
   getForecastData(response.data.coord);
 }
 

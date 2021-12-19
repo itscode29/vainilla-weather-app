@@ -23,33 +23,13 @@ body.day-clear {
   background-size: cover;
 }
 
-body.dawn-clear {
-  background: url(media/dawn-clear.svg) no-repeat center center fixed;
-  background-size: cover;
-}
-
-body.dusk-clear {
-  background: url(media/dusk-clear.svg) no-repeat center center fixed;
-  background-size: cover;
-}
-
 body.night-clear {
   background: url(media/night-clear.svg) no-repeat center center fixed;
   background-size: cover;
 }
 
-body.dawn-fog {
-  background: url(media/dawn-fog.svg) no-repeat center center fixed;
-  background-size: cover;
-}
-
 body.day-fog {
   background: url(media/day-fog.svg) no-repeat center center fixed;
-  background-size: cover;
-}
-
-body.dusk-fog {
-  background: url(media/dusk-fog.svg) no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -105,6 +85,16 @@ body.day-clouds {
 
 body.night-clouds {
   background: url(media/night-clouds.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.day-few-clouds {
+  background: url(media/day-few-clouds.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.night-few-clouds {
+  background: url(media/night-few-clouds.svg) no-repeat center center fixed;
   background-size: cover;
 }
 

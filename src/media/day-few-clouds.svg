@@ -6,9 +6,9 @@
 	.st0{fill:url(#sky_1_);}
 	.st1{display:none;opacity:0.68;fill:#B5B5B5;enable-background:new    ;}
 	.st2{display:none;opacity:0.68;fill:#7C7C7C;enable-background:new    ;}
-	.st3{opacity:0.65;fill:#FFFFFF;enable-background:new    ;}
-	.st4{display:none;opacity:0.65;fill:#FFFFFF;enable-background:new    ;}
-	.st5{display:none;opacity:0.43;fill:#FFFFFF;enable-background:new    ;}
+	.st3{display:none;opacity:0.65;fill:#FFFFFF;enable-background:new    ;}
+	.st4{opacity:0.65;fill:#FFFFFF;enable-background:new    ;}
+	.st5{opacity:0.43;fill:#FFFFFF;enable-background:new    ;}
 	.st6{fill:url(#SVGID_1_);}
 	.st7{opacity:0.59;fill:#201352;enable-background:new    ;}
 	.st8{opacity:0.37;fill:#FFFEF7;enable-background:new    ;}
@@ -27,15 +27,17 @@
 	.st21{fill:none;}
 	.st22{fill:#F5FFFD;}
 	.st23{fill:#F5FFFD;stroke:#F5FFFD;stroke-miterlimit:10;}
-	.st24{fill:#F5FFFD;stroke:#F5FFFD;stroke-width:1;stroke-miterlimit:10.0002;}
-	.st25{fill:#F5FFFD;stroke:#F5FFFD;stroke-width:1;stroke-miterlimit:9.9996;}
-	.st26{fill:#F5FFFD;stroke:#F5FFFD;stroke-width:1;stroke-miterlimit:10.0003;}
-	.st27{opacity:0.35;fill:url(#sunlight_1_);enable-background:new    ;}
-	.st28{display:none;opacity:0.61;fill:url(#sunset_1_);enable-background:new    ;}
+	.st24{fill:#F5FFFD;stroke:#F5FFFD;stroke-miterlimit:10.0002;}
+	.st25{fill:#F5FFFD;stroke:#F5FFFD;stroke-width:1;stroke-miterlimit:10.0002;}
+	.st26{fill:#F5FFFD;stroke:#F5FFFD;stroke-width:1;stroke-miterlimit:9.9999;}
+	.st27{fill:#F5FFFD;stroke:#F5FFFD;stroke-width:1;stroke-miterlimit:10.0003;}
+	.st28{fill:#F5FFFD;stroke:#F5FFFD;stroke-miterlimit:10.0003;}
+	.st29{opacity:0.2;fill:url(#sunlight_1_);enable-background:new    ;}
+	.st30{display:none;opacity:0.61;fill:url(#sunset_1_);enable-background:new    ;}
 </style>
 <g id="BACKGROUND">
 	
-		<linearGradient id="sky_1_" gradientUnits="userSpaceOnUse" x1="375" y1="790.5925" x2="375" y2="550.6" gradientTransform="matrix(1 0 0 1 0 -578)">
+		<linearGradient id="sky_1_" gradientUnits="userSpaceOnUse" x1="375" y1="-288.5925" x2="375" y2="-48.6" gradientTransform="matrix(1 0 0 -1 0 -76)">
 		<stop  offset="1.260747e-03" style="stop-color:#BFDFFF"/>
 		<stop  offset="0.3747" style="stop-color:#B6D9FF"/>
 		<stop  offset="0.9821" style="stop-color:#9EC8FF"/>
@@ -47,17 +49,17 @@
 	<rect id="cloudy" y="0.3" class="st1" width="750" height="500.5"/>
 	<rect id="cloudy_1_" y="0.3" class="st2" width="750" height="500.5"/>
 	
-		<ellipse id="morning" transform="matrix(0.158 -0.9874 0.9874 0.158 340.5854 802.1072)" class="st3" cx="640.6" cy="201.3" rx="42.7" ry="42.7"/>
+		<ellipse id="morning" transform="matrix(0.158 -0.9874 0.9874 0.158 340.4965 802.0814)" class="st3" cx="640.6" cy="201.4" rx="42.7" ry="42.7"/>
 	
-		<ellipse id="day" transform="matrix(0.158 -0.9874 0.9874 0.158 301.881 481.629)" class="st4" cx="433.4" cy="63.8" rx="42.7" ry="42.7"/>
+		<ellipse id="day" transform="matrix(0.158 -0.9874 0.9874 0.158 301.9125 481.6048)" class="st4" cx="433.4" cy="63.8" rx="42.7" ry="42.7"/>
 	
-		<ellipse id="afternoon" transform="matrix(0.3141 -0.9494 0.9494 0.3141 -29.8915 433.3101)" class="st4" cx="284.9" cy="237.3" rx="42.7" ry="42.7"/>
+		<ellipse id="afternoon" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -84.3984 270.9681)" class="st3" cx="284.9" cy="237.4" rx="42.7" ry="42.7"/>
 	<path id="high-mist" class="st5" d="M-9.7,104.3c0,0,21.7,1.3,47.7,5.3s79.3,1.3,100,4.7c20.7,3.3,25.3,11.3,47.3,14
 		s65.3,6,76,14.7s18,16.7,36.7,18.7s40,1.3,48,6.7c8,5.3,31.5,2,25.4,7s-59.4-2.9-73.4,3s4.7,16,17.7,18.6s71.7-6,89.7,0
 		s38.7,11.3,63.3,10.6c24.7-0.7,37.7-5.7,55.3,0.1s66.1,3.4,84.7,7.9c18.6,4.5,45.3,3.3,45.3,3.3v55H-9.7V104.3z"/>
 	<g id="mountains-4">
 		
-			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="383.35" y1="904.0001" x2="383.35" y2="746.6202" gradientTransform="matrix(1 0 0 1 0 -578)">
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="383.35" y1="-402.0001" x2="383.35" y2="-244.6202" gradientTransform="matrix(1 0 0 -1 0 -76)">
 			<stop  offset="0" style="stop-color:#CFEFFF"/>
 			<stop  offset="0.366" style="stop-color:#C6E7FC"/>
 			<stop  offset="0.9613" style="stop-color:#AED3F3"/>
@@ -73,7 +75,7 @@
 	</g>
 	<g id="mountains-3">
 		
-			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="577.15" y1="922" x2="577.15" y2="701.6156" gradientTransform="matrix(1 0 0 1 0 -578)">
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="577.15" y1="-420" x2="577.15" y2="-199.6156" gradientTransform="matrix(1 0 0 -1 0 -76)">
 			<stop  offset="0" style="stop-color:#BFDFFF"/>
 			<stop  offset="1.550000e-02" style="stop-color:#BDDDFD"/>
 			<stop  offset="0.2713" style="stop-color:#A3C2DF"/>
@@ -90,7 +92,7 @@
 	</g>
 	<g id="mountains-2">
 		
-			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="310.65" y1="1085.9999" x2="310.65" y2="836.9971" gradientTransform="matrix(1 0 0 1 0 -578)">
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="310.65" y1="-583.9999" x2="310.65" y2="-334.9971" gradientTransform="matrix(1 0 0 -1 0 -76)">
 			<stop  offset="0" style="stop-color:#BFDFFF"/>
 			<stop  offset="0.3235" style="stop-color:#A3C8E8"/>
 			<stop  offset="1" style="stop-color:#5F8EAF"/>
@@ -107,7 +109,7 @@
 		s-43.7,15.1-71.6,14.2s-42.6-7.6-62.5,0.1s-74.7,4.5-95.7,10.6c-21,6-51.2,4.4-51.2,4.4V416h750L750,190.1L750,190.1z"/>
 	<g id="mountains_1">
 		
-			<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="400.9" y1="1166.0002" x2="400.9" y2="929.9985" gradientTransform="matrix(1 0 0 1 0 -578)">
+			<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="400.9" y1="-664.0002" x2="400.9" y2="-427.9985" gradientTransform="matrix(1 0 0 -1 0 -76)">
 			<stop  offset="0" style="stop-color:#6F93B1"/>
 			<stop  offset="1" style="stop-color:#263F66"/>
 		</linearGradient>
@@ -121,7 +123,7 @@
 			397.1,408.5 446.1,383 488.5,360.5 516,335 551.3,311.7 532.7,311.7 		"/>
 	</g>
 	
-		<linearGradient id="trees_1_" gradientUnits="userSpaceOnUse" x1="373.55" y1="1198.5718" x2="373.55" y2="963.031" gradientTransform="matrix(1 0 0 1 0 -578)">
+		<linearGradient id="trees_1_" gradientUnits="userSpaceOnUse" x1="373.55" y1="-696.5718" x2="373.55" y2="-461.031" gradientTransform="matrix(1 0 0 -1 0 -76)">
 		<stop  offset="0" style="stop-color:#21425F"/>
 		<stop  offset="1" style="stop-color:#0A1E32"/>
 	</linearGradient>
@@ -146,9 +148,9 @@
 	<path id="Cloud_1_" class="st15" d="M181.4,176.4c0,0,177,6.1,219.5,5.2c42.5-0.9,79.8-6.1,125.8-5.2c46,0.9,85.9,3.5,113.7,2.6
 		s63.3-2.7,63.3-2.7s-42.5-8.6-69.4-12.9c-26.9-4.3-44.2-1.7-70.3-11.3s-23.4-14.8-54.7-13s-22.6,8.7-55.5,4.3
 		c-33-4.3-52.9-20-81.6-13c-28.6,7-45.1,16.5-82.4,17.4C252.6,148.6,201.4,160.8,181.4,176.4z"/>
-	<path id="Cloud_2_1_" class="st15" d="M20.4,135.2c0,0,82.8-7.2,106.6,0s54.9,1.8,71.4,0S247,132,247,132s-15.5-13-48.6-23.8
+	<path id="Cloud_2_1_" class="st16" d="M20.4,135.2c0,0,82.8-7.2,106.6,0s54.9,1.8,71.4,0S247,132,247,132s-15.5-13-48.6-23.8
 		s-53.8-25.2-79.7-18C92.9,97.3,20.4,135.2,20.4,135.2z"/>
-	<path id="Cloud_3_1_" class="st15" d="M0,70.5c0,0,169.2,0,229.9,0s99.9,11.4,127.2,7.9s82.8-1,88.4,0.6s80.5,0,80.5,0
+	<path id="Cloud_3_1_" class="st16" d="M0,70.5c0,0,169.2,0,229.9,0s99.9,11.4,127.2,7.9s82.8-1,88.4,0.6s80.5,0,80.5,0
 		s-47.6-26.8-71.3-26.8s-107-5.7-148.6-13.6S252.4,3.4,204.9,7.9S139.5,25,90.8,17S0,0,0,0V70.5z"/>
 	<path id="main-cloud-small" class="st16" d="M751.3,127c0,0-71.2,0-96.7,0s-42,5-53.5,3.5s-34.8-0.4-37.2,0.3
 		c-2.3,0.7-33.8,0-33.8,0s20-11.8,30-11.8s45-2.5,62.5-6s22.5-15.5,42.5-13.5s27.5,7.5,48,4s38.2-7.5,38.2-7.5V127z"/>
@@ -159,7 +161,7 @@
 		S542,40,534.3,46z"/>
 	<rect id="night" class="st17" width="750" height="500.5"/>
 	
-		<radialGradient id="Moonlight_1_" cx="222.2" cy="704.5" r="533.3" gradientTransform="matrix(1 0 0 1 0 -578)" gradientUnits="userSpaceOnUse">
+		<radialGradient id="Moonlight_1_" cx="222.2" cy="-202.5" r="533.3" gradientTransform="matrix(1 0 0 -1 0 -76)" gradientUnits="userSpaceOnUse">
 		<stop  offset="0" style="stop-color:#FFFFFF"/>
 		<stop  offset="0.8166" style="stop-color:#FBFFFF;stop-opacity:0.265"/>
 		<stop  offset="1" style="stop-color:#F9FFFF;stop-opacity:0.1"/>
@@ -167,7 +169,7 @@
 		<stop  offset="1" style="stop-color:#F9FFFF;stop-opacity:0"/>
 	</radialGradient>
 	<circle id="Moonlight" class="st18" cx="222.2" cy="126.5" r="533.3"/>
-	<path id="Moon" class="st4" d="M233.8,148.6c-18.7-3-31.5-20.6-28.5-39.3c1.8-11.3,8.9-20.4,18.4-25.2
+	<path id="Moon" class="st3" d="M233.8,148.6c-18.7-3-31.5-20.6-28.5-39.3c1.8-11.3,8.9-20.4,18.4-25.2
 		c-21.2-0.8-40.2,14.4-43.7,35.9c-3.7,23.3,12.1,45.2,35.4,48.9c21.1,3.4,41.1-9.4,47.4-29.1C255.3,146.8,244.7,150.4,233.8,148.6z"
 		/>
 </g>
@@ -7643,7 +7645,8 @@
 		<circle class="st23" cx="344.7" cy="325.7" r="3"/>
 		<circle class="st23" cx="373.9" cy="379.3" r="1.4"/>
 		<circle class="st23" cx="324.3" cy="293.7" r="1.4"/>
-		<ellipse transform="matrix(0.1602 -0.9871 0.9871 0.1602 -161.5762 571.89)" class="st23" cx="255.3" cy="380.9" rx="3" ry="3"/>
+		
+			<ellipse transform="matrix(0.3162 -0.9487 0.9487 0.3162 -186.7854 502.6519)" class="st25" cx="255.3" cy="380.9" rx="3" ry="3"/>
 		<circle class="st23" cx="419.1" cy="340.7" r="5.4"/>
 		<circle class="st23" cx="454.9" cy="387.2" r="1.4"/>
 		<circle class="st23" cx="479" cy="430" r="4.4"/>
@@ -7716,7 +7719,7 @@
 		<circle class="st23" cx="304.9" cy="27.4" r="1.4"/>
 		<circle class="st23" cx="328.8" cy="69.9" r="4.4"/>
 		<circle class="st23" cx="373.7" cy="54.3" r="1.4"/>
-		<ellipse transform="matrix(0.3827 -0.9239 0.9239 0.3827 106.1864 270.8897)" class="st25" cx="255.8" cy="56" rx="3" ry="3"/>
+		<ellipse transform="matrix(0.5257 -0.8506 0.8506 0.5257 73.7001 244.1647)" class="st26" cx="255.8" cy="56" rx="3" ry="3"/>
 		<circle class="st23" cx="418.6" cy="16" r="5.4"/>
 		<circle class="st23" cx="454.2" cy="62.3" r="1.4"/>
 		<circle class="st23" cx="478.2" cy="104.8" r="4.4"/>
@@ -7758,7 +7761,7 @@
 		<circle class="st23" cx="344.7" cy="137.5" r="3"/>
 		<circle class="st23" cx="373.7" cy="190.8" r="1.4"/>
 		<circle class="st23" cx="324.4" cy="105.7" r="1.4"/>
-		<ellipse transform="matrix(0.3162 -0.9487 0.9487 0.3162 -7.6823 374.186)" class="st24" cx="255.7" cy="192.4" rx="3" ry="3"/>
+		<ellipse transform="matrix(0.4641 -0.8858 0.8858 0.4641 -33.4274 329.6304)" class="st27" cx="255.7" cy="192.4" rx="3" ry="3"/>
 		<circle class="st23" cx="418.6" cy="152.4" r="5.4"/>
 		<circle class="st23" cx="454.2" cy="198.7" r="1.4"/>
 		<circle class="st23" cx="478.2" cy="241.3" r="4.4"/>
@@ -7791,7 +7794,7 @@
 		<circle class="st23" cx="26.6" cy="272.2" r="3"/>
 		<circle class="st23" cx="55.6" cy="325.5" r="1.4"/>
 		<circle class="st23" cx="6.3" cy="240.3" r="1.4"/>
-		<ellipse class="st26" cx="-62.3" cy="327.1" rx="3" ry="3"/>
+		<ellipse class="st28" cx="-62.3" cy="327.1" rx="3" ry="3"/>
 		<circle class="st23" cx="100.6" cy="287.1" r="5.4"/>
 		<circle class="st23" cx="136.1" cy="333.4" r="1.4"/>
 		<circle class="st23" cx="160.1" cy="376" r="4.4"/>
@@ -7842,7 +7845,7 @@
 		<circle class="st23" cx="26.6" cy="408.7" r="3"/>
 		<circle class="st23" cx="55.6" cy="462" r="1.4"/>
 		<circle class="st23" cx="6.3" cy="376.8" r="1.4"/>
-		<ellipse class="st26" cx="-62.3" cy="463.6" rx="3" ry="3"/>
+		<ellipse class="st28" cx="-62.3" cy="463.6" rx="3" ry="3"/>
 		<circle class="st23" cx="100.6" cy="423.6" r="5.4"/>
 		<circle class="st23" cx="136.1" cy="469.9" r="1.4"/>
 		<circle class="st23" cx="160.1" cy="5.4" r="4.4"/>
@@ -7888,17 +7891,17 @@
 		<circle class="st23" cx="796.7" cy="374.7" r="4.4"/>
 	</g>
 </g>
-<radialGradient id="sunlight_1_" cx="640.7" cy="300.7" r="533.3" gradientTransform="matrix(1 0 0 -1 0 502)" gradientUnits="userSpaceOnUse">
+<radialGradient id="sunlight_1_" cx="433.4" cy="641.8" r="533.3" gradientTransform="matrix(1 0 0 1 0 -578)" gradientUnits="userSpaceOnUse">
 	<stop  offset="0" style="stop-color:#F6FF22"/>
 	<stop  offset="1" style="stop-color:#F6FF22;stop-opacity:0"/>
 </radialGradient>
-<circle id="sunlight" class="st27" cx="640.7" cy="201.3" r="533.3"/>
-<radialGradient id="sunset_1_" cx="277.7" cy="275.2" r="533.3" gradientTransform="matrix(1 0 0 -1 0 502)" gradientUnits="userSpaceOnUse">
+<circle id="sunlight" class="st29" cx="433.4" cy="63.8" r="533.3"/>
+<radialGradient id="sunset_1_" cx="277.7" cy="804.8" r="533.3" gradientTransform="matrix(1 0 0 1 0 -578)" gradientUnits="userSpaceOnUse">
 	<stop  offset="0" style="stop-color:#F68B22"/>
 	<stop  offset="0.5654" style="stop-color:#F68D22;stop-opacity:0.4346"/>
 	<stop  offset="0.7691" style="stop-color:#F69422;stop-opacity:0.2309"/>
 	<stop  offset="0.9137" style="stop-color:#F69F22;stop-opacity:8.627999e-02"/>
 	<stop  offset="1" style="stop-color:#F6AB22;stop-opacity:0"/>
 </radialGradient>
-<circle id="sunset" class="st28" cx="277.7" cy="226.8" r="533.3"/>
+<circle id="sunset" class="st30" cx="277.7" cy="226.8" r="533.3"/>
 </svg>
