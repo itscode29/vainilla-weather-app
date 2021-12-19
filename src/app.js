@@ -32,6 +32,7 @@ function removeClasses(element) {
 }
 
 function isDay() {
+  console.log(sunrise, timestamp, sunset);
   if (sunrise < timestamp && sunset > timestamp) {
     console.log("Is day");
     return true;
@@ -39,7 +40,7 @@ function isDay() {
 }
 
 function isNight() {
-  if (sunrise > timestamp && sunset < timestamp) {
+  if (sunrise > timestamp || sunset < timestamp) {
     console.log("Is Night");
     return true;
   }
@@ -63,7 +64,6 @@ function isFog(weather) {
 }
 
 function changeBackground(weather) {
-  debugger;
   let backgroundElement = document.querySelector("#background");
   if (
     (weather.description === "broken clouds" && isDay()) ||
