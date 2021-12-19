@@ -13,17 +13,32 @@ function centerTemperatures(temperature) {
 function removeClasses(element) {
   element.classList.remove(
     "day-clear",
+    "night-clear",
     "day-fog",
+    "night-fog",
     "day-thunderstorm",
+    "night-thunderstorm",
     "day-rain",
+    "night-rain",
     "day-drizzle",
+    "night-drizzle",
     "day-snow",
-    "day-clouds"
+    "night-snow",
+    "day-clouds",
+    "night-clouds"
   );
 }
 
 function isDay() {
   if (sunrise < timestamp && sunset > timestamp) {
+    console.log("Is day");
+    return true;
+  }
+}
+
+function isNight() {
+  if (sunrise > timestamp && sunset < timestamp) {
+    console.log("Is Night");
     return true;
   }
 }
@@ -46,12 +61,13 @@ function isFog(weather) {
 }
 
 function changeBackground(weather) {
+  debugger;
   let backgroundElement = document.querySelector("#background");
   if (weather === "Clouds" && isDay()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("day-clouds");
   }
-  if (weather === "Clouds") {
+  if (weather === "Clouds" && isNight()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("night-clouds");
   }
@@ -59,7 +75,7 @@ function changeBackground(weather) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("day-clear");
   }
-  if (weather === "Clear") {
+  if (weather === "Clear" && isNight()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("night-clear");
   }
@@ -67,7 +83,7 @@ function changeBackground(weather) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("day-thunderstorm");
   }
-  if (weather === "Thunderstorm") {
+  if (weather === "Thunderstorm" && isNight()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("night-thunderstorm");
   }
@@ -75,7 +91,7 @@ function changeBackground(weather) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("day-drizzle");
   }
-  if (weather === "Drizzle") {
+  if (weather === "Drizzle" && isNight()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("night-drizzle");
   }
@@ -83,7 +99,7 @@ function changeBackground(weather) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("day-rain");
   }
-  if (weather === "Rain") {
+  if (weather === "Rain" && isNight()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("night-rain");
   }
@@ -91,7 +107,7 @@ function changeBackground(weather) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("day-snow");
   }
-  if (weather === "Snow") {
+  if (weather === "Snow" && isNight()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("night-snow");
   }
@@ -99,14 +115,14 @@ function changeBackground(weather) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("day-fog");
   }
-  if (isFog(weather)) {
+  if (isFog(weather) && isNight()) {
     removeClasses(backgroundElement);
     backgroundElement.classList.add("night-fog");
   }
 }
 
-function formatTime() {
-  let date = new Date(timestamp);
+function formatTime(ts) {
+  let date = new Date(ts);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -132,8 +148,8 @@ function getOrdinal() {
   }
 }
 
-function formatDate() {
-  let date = new Date(timestamp);
+function formatDate(ts) {
+  let date = new Date(ts);
   let days = [
     "Sunday",
     "Monday",
@@ -224,7 +240,9 @@ function getForecastData(coordinates) {
 
 // Replace data
 function displayTemperature(response) {
+  console.log(response.data.timezone);
   console.log(response.data);
+  console.log(response.data.dt);
   celsiusTemperature = response.data.main.temp;
   celsiusMinTemp = response.data.main.temp_min;
   celsiusMaxTemp = response.data.main.temp_max;
