@@ -2,9 +2,11 @@ function centerTemperatures(temperature) {
   let temperatureElment = document.querySelector("#temperature");
   let degreeElement = document.querySelector("#degree");
   if (temperature < 10 && temperature > -10) {
+    console.log("is small number");
     temperatureElment.classList.replace("col-8", "col-7");
     degreeElement.classList.replace("col-4", "col-5");
   } else {
+    console.log("is big number");
     temperatureElment.classList.replace("col-7", "col-8");
     degreeElement.classList.replace("col-5", "col-4");
   }
@@ -32,16 +34,13 @@ function removeClasses(element) {
 }
 
 function isDay() {
-  console.log(sunrise, timestamp, sunset);
   if (sunrise < timestamp && sunset > timestamp) {
-    console.log("Is day");
     return true;
   }
 }
 
 function isNight() {
   if (sunrise > timestamp || sunset < timestamp) {
-    console.log("Is Night");
     return true;
   }
 }
@@ -262,9 +261,6 @@ function getForecastData(coordinates) {
 
 // Replace data
 function displayTemperature(response) {
-  console.log(response.data.timezone);
-  console.log(response.data);
-  console.log(response.data.dt);
   celsiusTemperature = response.data.main.temp;
   celsiusMinTemp = response.data.main.temp_min;
   celsiusMaxTemp = response.data.main.temp_max;
@@ -328,6 +324,7 @@ function changeUnits() {
     farenheitButton.innerHTML = "ºC";
     units = "imperial";
     getForecastData(coords);
+    centerTemperatures(Math.round(farenheitTemperature));
   } else {
     mainTempElement.innerHTML = Math.round(celsiusTemperature);
     minTempElement.innerHTML = Math.round(celsiusMinTemp);
@@ -338,6 +335,7 @@ function changeUnits() {
     farenheitButton.innerHTML = "ºF";
     units = "metric";
     getForecastData(coords);
+    centerTemperatures(Math.round(celsiusTemperature));
   }
 }
 
