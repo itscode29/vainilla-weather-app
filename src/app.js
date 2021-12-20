@@ -261,25 +261,27 @@ function getForecastData(coordinates) {
 
 // Replace data
 function displayTemperature(response) {
-  celsiusTemperature = response.data.main.temp;
-  celsiusMinTemp = response.data.main.temp_min;
-  celsiusMaxTemp = response.data.main.temp_max;
-  metricWindSpeed = response.data.wind.speed;
-  let temperature = Math.round(celsiusTemperature);
+  debugger;
+  city = response.data.name;
+  temperature = response.data.main.temp;
+  minTemp = response.data.main.temp_min;
+  maxTemp = response.data.main.temp_max;
+  windSpeed = response.data.wind.speed;
+  temperature = Math.round(temperature);
   let temperatureElment = document.querySelector("#temperature");
   temperatureElment.innerHTML = temperature;
   let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = response.data.name;
+  cityElement.innerHTML = city;
   let minElement = document.querySelector("#current-min-temp");
-  minElement.innerHTML = Math.round(celsiusMinTemp);
+  minElement.innerHTML = Math.round(minTemp);
   let maxElement = document.querySelector("#current-max-temp");
-  maxElement.innerHTML = Math.round(celsiusMaxTemp);
+  maxElement.innerHTML = Math.round(maxTemp);
   let desciptionElement = document.querySelector("#description");
   desciptionElement.innerHTML = response.data.weather[0].description;
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.main.humidity;
   let windSpeedElement = document.querySelector("#wind-speed");
-  windSpeedElement.innerHTML = Math.round(metricWindSpeed);
+  windSpeedElement.innerHTML = Math.round(windSpeed);
   timestamp = response.data.dt;
   timezone = response.data.timezone;
   sunset = response.data.sys.sunset;
@@ -305,37 +307,23 @@ function searchCity(event) {
 
 // Unit change button
 function changeUnits() {
-  let mainTempElement = document.querySelector("#temperature");
-  let minTempElement = document.querySelector("#current-min-temp");
-  let maxTempElement = document.querySelector("#current-max-temp");
-  let windSpeedElement = document.querySelector("#wind-speed");
   let windUnitsElement = document.querySelector("#wind-units");
   if (farenheitButton.classList.contains("btn-farenheit")) {
-    let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-    mainTempElement.innerHTML = Math.round(farenheitTemperature);
-    let farenheitMinTemp = (celsiusMinTemp * 9) / 5 + 32;
-    minTempElement.innerHTML = Math.round(farenheitMinTemp);
-    let farenheitMaxTemp = (celsiusMaxTemp * 9) / 5 + 32;
-    maxTempElement.innerHTML = Math.round(farenheitMaxTemp);
-    let imperialWindSpeed = metricWindSpeed * 2.237;
-    windSpeedElement.innerHTML = Math.round(imperialWindSpeed);
+    units = "imperial";
     windUnitsElement.innerHTML = "mph";
     farenheitButton.classList.replace("btn-farenheit", "btn-celsius");
     farenheitButton.innerHTML = "ºC";
-    units = "imperial";
+    showWeather(city);
     getForecastData(coords);
-    centerTemperatures(Math.round(farenheitTemperature));
+    centerTemperatures(Math.round(temperature));
   } else {
-    mainTempElement.innerHTML = Math.round(celsiusTemperature);
-    minTempElement.innerHTML = Math.round(celsiusMinTemp);
-    maxTempElement.innerHTML = Math.round(celsiusMaxTemp);
-    windSpeedElement.innerHTML = Math.round(metricWindSpeed);
+    units = "metric";
     windUnitsElement.innerHTML = "m/s";
     farenheitButton.classList.replace("btn-celsius", "btn-farenheit");
     farenheitButton.innerHTML = "ºF";
-    units = "metric";
+    showWeather(city);
     getForecastData(coords);
-    centerTemperatures(Math.round(celsiusTemperature));
+    centerTemperatures(Math.round(temperature));
   }
 }
 
@@ -352,12 +340,13 @@ function getCurrentLocation() {
 }
 
 // Global variables
-let celsiusTemperature = null;
-let celsiusMinTemp = null;
-let celsiusMaxTemp = null;
-let metricWindSpeed = null;
+let temperature = null;
+let minTemp = null;
+let maxTemp = null;
+let windSpeed = null;
 let units = "metric";
 let coords = null;
+let city = "Barcelona";
 let timestamp = null;
 let timezone = null;
 let sunrise = null;
@@ -374,4 +363,4 @@ searchEngine.addEventListener("submit", searchCity);
 let currentCityButton = document.querySelector("#current-location");
 currentCityButton.addEventListener("click", getCurrentLocation);
 
-showWeather("Barcelona");
+showWeather(city);
